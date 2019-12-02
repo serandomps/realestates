@@ -1,0 +1,75 @@
+/*
+body {
+    background: url("images/bg.jpg") center top repeat;
+}
+
+.navigation .navbar-default {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.thumbnail, .panel {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none
+}
+
+.vehicles-find .thumbnail .info {
+    background: #fff;
+}
+
+.panel-default > .panel-heading {
+    background: #B1A599;
+    color: #ffffff;
+    !*text-shadow: 1px 1px 1px #000000;*!
+    box-shadow: inset 0 -2px 2px rgba(73, 73, 73, 0.16);
+    text-align: center;
+}
+
+.panel {
+    background: none;
+}
+
+.panel-body {
+    background: #ffffff;
+}
+
+.panel-footer {
+    background: #f6f0ec;
+    color: #ffffff;
+}
+.btn-default {
+    background: #E65F3C;
+    color: #ffffff;
+    border: none;
+    !*text-shadow: 1px 1px 1px #000000;*!
+}
+
+.btn-default:hover {
+    background: #ef7151;
+    color: #ffffff;
+}
+*/
+
+.navbar-default {
+}
+
+.navbar-default .navbar-nav>li>a {
+}
+
+.navbar-default .navbar-brand {
+}
+
+.panel-body {
+
+}
+
+.panel-default>.panel-footer {
+    border-top: 1px solid #ddd;
+}
+
+.panel-default {
+
+}
+
+.panel-default>.panel-heading {
+    border-bottom: 1px solid #ddd;
+}
