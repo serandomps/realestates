@@ -15,7 +15,7 @@ var app = serand.app({
 
 var layout = serand.layout(app);
 
-var loginUri = utils.resolve('realestates-model:///auth');
+var loginUri = utils.resolve('model-realestates:///auth');
 
 var author = require('./controllers/auth');
 
@@ -53,10 +53,10 @@ page('/', function (ctx, next) {
         .add('realestates-client:navigation')
         //.add('breadcrumb')
         .area('#right')
-        .add('realestates-model:recent')
+        .add('model-realestates:recent')
         .area('#middle')
         .add('realestates-client:home')
-        .add('realestates-model:featured')
+        .add('model-realestates:featured')
         .area('#footer')
         .add('footer')
         .render(ctx, next);
@@ -70,9 +70,9 @@ page('/realestates', function (ctx, next) {
         .add('realestates-client:navigation')
         //.add('breadcrumb')
         .area('#left')
-        .add('realestates-model:filter', {query: o.query})
+        .add('model-realestates:filter', {query: o.query})
         .area('#middle')
-        .add('realestates-model:search', {
+        .add('model-realestates:search', {
             loadable: true,
             query: o
         })
@@ -86,7 +86,7 @@ page('/create-realestates', can('vehicle:create'), function (ctx, next) {
         .area('#header')
         .add('realestates-client:navigation')
         .area('#middle')
-        .add('realestates-model:create')
+        .add('model-realestates:create')
         .area('#footer')
         .add('footer')
         .render(ctx, next);
@@ -98,7 +98,7 @@ page('/realestates/:id', can('vehicle:read'), function (ctx, next) {
         .add('realestates-client:navigation')
         //.add('breadcrumb')
         .area('#middle')
-        .add('realestates-model:findone', {
+        .add('model-realestates:findone', {
             id: ctx.params.id
         })
         .area('#footer')
@@ -112,7 +112,7 @@ page('/realestates/:id/edit', can('vehicle:update'), function (ctx, next) {
         .add('realestates-client:navigation')
         //.add('breadcrumb')
         .area('#middle')
-        .add('realestates-model:create', {
+        .add('model-realestates:create', {
             id: ctx.params.id
         })
         .area('#footer')
@@ -126,7 +126,7 @@ page('/realestates/:id/delete', can('vehicle:update'), function (ctx, next) {
         .add('realestates-client:navigation')
         //.add('breadcrumb')
         .area('#middle')
-        .add('realestates-model:remove', {
+        .add('model-realestates:remove', {
             id: ctx.params.id
         })
         .area('#footer')
@@ -139,7 +139,7 @@ page('/mine', can('user'), function (ctx, next) {
         .area('#header')
         .add('realestates-client:navigation')
         .area('#middle')
-        .add('realestates-model:mine')
+        .add('model-realestates:mine')
         .area('#footer')
         .add('footer')
         .render(ctx, next);

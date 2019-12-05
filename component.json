@@ -11,7 +11,7 @@
         "serandomps/utils": "master",
         "serandomps/uready": "master",
         "serandomps/realestates-client": "master",
-        "serandomps/realestates-model": "master",
+        "serandomps/model-realestates": "master",
         "serandomps/breadcrumb": "master",
         "serandomps/footer": "master",
         "serandomps/navigation": "master",
