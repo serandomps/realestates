@@ -81,7 +81,7 @@ page('/realestates', function (ctx, next) {
         .render(ctx, next);
 });
 
-page('/create-realestates', can('vehicle:create'), function (ctx, next) {
+page('/create-realestates', function (ctx, next) {
     layout('one-column')
         .area('#header')
         .add('realestates-client:navigation')
@@ -92,7 +92,7 @@ page('/create-realestates', can('vehicle:create'), function (ctx, next) {
         .render(ctx, next);
 });
 
-page('/realestates/:id', can('vehicle:read'), function (ctx, next) {
+page('/realestates/:id', function (ctx, next) {
     layout('one-column')
         .area('#header')
         .add('realestates-client:navigation')
@@ -106,7 +106,22 @@ page('/realestates/:id', can('vehicle:read'), function (ctx, next) {
         .render(ctx, next);
 });
 
-page('/realestates/:id/edit', can('vehicle:update'), function (ctx, next) {
+page('/:model/:about/report', function (ctx, next) {
+    layout('one-column')
+        .area('#header')
+        .add('realestates-client:navigation')
+        //.add('breadcrumb')
+        .area('#middle')
+        .add('model-messages:create', {
+            model: ctx.params.model,
+            about: ctx.params.about
+        })
+        .area('#footer')
+        .add('footer')
+        .render(ctx, next);
+});
+
+page('/realestates/:id/edit', function (ctx, next) {
     layout('one-column')
         .area('#header')
         .add('realestates-client:navigation')
@@ -120,7 +135,7 @@ page('/realestates/:id/edit', can('vehicle:update'), function (ctx, next) {
         .render(ctx, next);
 });
 
-page('/realestates/:id/delete', can('vehicle:update'), function (ctx, next) {
+page('/realestates/:id/delete', function (ctx, next) {
     layout('one-column')
         .area('#header')
         .add('realestates-client:navigation')
