@@ -15,8 +15,7 @@
         "serandomps/model-realestates": "master",
         "serandomps/breadcrumb": "master",
         "serandomps/footer": "master",
-        "serandomps/navigation": "master",
-        "serandomps/upload": "master"
+        "serandomps/navigation": "master"
     },
     "scripts": [
         "index.js",
