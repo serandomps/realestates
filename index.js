@@ -15,9 +15,7 @@ var app = serand.app({
 
 var layout = serand.layout(app);
 
-var loginUri = utils.resolve('model-realestates:///auth');
-
-var author = require('./controllers/auth');
+var loginUri = utils.resolve('realestates:///auth');
 
 var can = function (permission) {
     return function (ctx, next) {
@@ -25,7 +23,9 @@ var can = function (permission) {
     };
 };
 
-page('/signin', author.signin);
+page('/signin', auth.signin({
+    loginUri: loginUri
+}));
 
 page('/signup', function (ctx, next) {
     var query = ctx.query | {};
@@ -164,7 +164,7 @@ utils.on('user', 'login', function (location) {
     if (!location) {
         location = serand.path();
     }
-    serand.store('state', {
+    serand.persist('state', {
         location: location
     });
 
@@ -180,12 +180,12 @@ utils.on('user', 'login', function (location) {
 });
 
 utils.on('user', 'logged in', function (token) {
-    var state = serand.store('state', null);
+    var state = serand.persist('state', null);
     redirect(state && state.location || '/');
 });
 
 utils.on('user', 'logged out', function (usr) {
-    var state = serand.store('state', null);
+    var state = serand.persist('state', null);
     redirect(state && state.location || '/');
 });
 
