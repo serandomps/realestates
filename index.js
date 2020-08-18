@@ -106,14 +106,13 @@ page('/realestates/:id', function (ctx, next) {
         .render(ctx, next);
 });
 
-page('/:model/:about/report', function (ctx, next) {
+page('/realestates/:about/report', function (ctx, next) {
     layout('one-column')
         .area('#header')
         .add('realestates-client:navigation')
         //.add('breadcrumb')
         .area('#middle')
-        .add('model-messages:create', {
-            model: ctx.params.model,
+        .add('model-realestates:report', {
             about: ctx.params.about
         })
         .area('#footer')
